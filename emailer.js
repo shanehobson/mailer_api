@@ -11,8 +11,8 @@ module.exports.sendEmail = (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'hobsonelectricinc@gmail.com', // Your email id
-            pass: password // Your password
+            user: 'hobsonelectricinc@gmail.com',
+            pass: password
         }
     });
 
@@ -27,8 +27,8 @@ module.exports.sendEmail = (req, res) => {
     const mailOptions = {
         from: 'hobsonelectricinc@gmail.com', // sender address
         to: 'shanehobson1@gmail.com', // list of receivers
-        subject: `New Website Inquiry from ${name}`, // Subject line
-        html: html
+        subject: `New Website Inquiry from ${name}`,
+        html: html //can be text
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

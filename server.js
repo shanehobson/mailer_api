@@ -1,13 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const emailer = require('./emailer');
 
 const port = process.env.PORT || 3002;
 
 const app = express();
 
-//Enable CORS
+//enable CORS
 const allowCrossDomain = (req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -22,36 +21,28 @@ app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-//handler to respond to post request from client & send email
+//handlers to respond to post request from client & send email
 app.post('/', (req, res) => {
     console.log('Request received.');
     console.log(req.body);
-    
-    //call send email function
     emailer.sendEmail(req, res);
 });
 
 app.post('/commercial', (req, res) => {
     console.log('Request received.');
     console.log(req.body);
-    
-    //call send email function
     emailer.sendEmail(req, res);
 });
 
 app.post('/residential', (req, res) => {
     console.log('Request received.');
     console.log(req.body);
-    
-    //call send email function
     emailer.sendEmail(req, res);
 });
 
 app.post('/about', (req, res) => {
     console.log('Request received.');
     console.log(req.body);
-    
-    //call send email function
     emailer.sendEmail(req, res);
 });
 

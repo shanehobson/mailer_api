@@ -5,7 +5,10 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "nodemailer": "^4.6.6"
+    "git": "^0.1.5",
+    "gpg": "^0.6.0",
+    "nodemailer": "^4.6.6",
+    "secret": "^1.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
