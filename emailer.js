@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
-const config = require('./config');
-const password = config.password;
+const secrets = require('./secrets');
+const password = secrets.password;
 
 module.exports.sendEmail = (req, res) => {
     const name = req.body.name;
